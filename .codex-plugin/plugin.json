@@ -27,7 +27,6 @@
       "Audit this Bazel control plane with defensible evidence.",
       "Choose the smallest Bazel evidence for this task."
     ],
-    "brandColor": "#162A46",
-    "screenshots": []
+    "brandColor": "#162A46"
   }
 }

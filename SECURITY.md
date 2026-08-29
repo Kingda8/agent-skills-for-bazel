@@ -4,9 +4,9 @@
 
 Do not open a public issue containing a credential, private identifier, unpublished vulnerability, internal infrastructure detail, or other sensitive material.
 
-The intended public channel is GitHub Private Vulnerability Reporting on the repository's **Security** tab. Before the first public release, the maintainer must enable that feature and verify a private test report. If the private form is unavailable, open only a non-sensitive public issue asking the maintainer to establish a private channel; do not include the sensitive details.
+The intended public channel is GitHub Private Vulnerability Reporting on the repository's **Security** tab. After the repository becomes public, enable and verify GitHub Private Vulnerability Reporting before announcing the first release. If the private form is unavailable, open only a non-sensitive public issue asking the maintainer to establish a private channel; do not include the sensitive details.
 
-This local repository currently has no public remote, so no private reporting endpoint can be claimed yet. Enabling and verifying the endpoint is an explicit publication gate.
+Until that verification is complete, no private reporting endpoint is claimed. Enabling and verifying the endpoint is an explicit publication gate.
 
 Rotate or revoke an exposed credential through its owner. Deleting it from the latest revision does not remove it from Git history or external caches.
 
@@ -25,7 +25,7 @@ General Bazel or agent-client vulnerabilities belong with their upstream maintai
 
 ## Supported versions
 
-Until a stable release exists, only the current default branch is supported. After tagged releases begin, this section must name the supported release lines explicitly.
+For v0.1.0, the current default branch is supported. After tagged releases begin, this section must name the supported release lines explicitly.
 
 ## Maintainer response
 

@@ -24,7 +24,7 @@ The project is for:
 
 | Skill | Purpose | Status |
 |---|---|---|
-| [`bazel-evidence-engineering`](skills/bazel-evidence-engineering/SKILL.md) | Select the correct Bazel evidence across repository identity, graphs, configuration, actions, execution, CI, artifacts, and provenance | Pre-1.0 public preview |
+| [`bazel-evidence-engineering`](skills/bazel-evidence-engineering/SKILL.md) | Select the correct Bazel evidence across repository identity, graphs, configuration, actions, execution, CI, artifacts, and provenance | v0.1.0 |
 
 The Bazel skill covers:
 
@@ -85,7 +85,7 @@ For a repository used by all three clients, `.agents/skills/` serves Codex and C
 
 Current client references: [Codex skill locations](https://developers.openai.com/codex/skills), [Claude Code skill locations](https://code.claude.com/docs/en/skills), and [Cursor Agent Skills](https://cursor.com/docs/skills).
 
-The repository root also contains a [Codex plugin manifest](.codex-plugin/plugin.json), so the same source tree is ready to be distributed as a skill-only plugin after a public marketplace or repository URL exists. No public plugin, marketplace listing, or public remote has been published.
+The repository root also contains a [Codex plugin manifest](.codex-plugin/plugin.json), so the same source tree can be distributed as a skill-only plugin. The project is distributed directly from GitHub. No public plugin-directory listing has been published yet.
 
 ## Trust and maturity
 
@@ -93,7 +93,7 @@ The repository root also contains a [Codex plugin manifest](.codex-plugin/plugin
 - The repository validator checks structure, links, plugin metadata, common credential and private-path shapes, configured private terms, and reachable Git text history.
 - Automated checks are bounded. They cannot prove the absence of semantic leakage; manual review remains required.
 - Behavioral scenarios and hard-fail criteria are versioned with the skill. Cross-client measured results have not yet been published.
-- Filesystem installation is documented for Codex, Claude Code, and Cursor. The OpenAI adapter is maintained for Codex; measured Claude Code and Cursor decision results remain pre-1.0 work until recorded in fresh sessions.
+- Filesystem installation is documented for Codex, Claude Code, and Cursor. The OpenAI adapter is maintained for Codex; measured Claude Code and Cursor decision results have not yet been published.
 
 Run the local gates with Python 3.10 or newer:
 
