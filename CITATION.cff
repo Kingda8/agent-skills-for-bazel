@@ -1,8 +1,0 @@
-cff-version: 1.2.0
-message: "If Agent Skills for Bazel helps your work, cite the project and the version you used."
-title: "Agent Skills for Bazel"
-type: software
-authors:
-  - name: "kingda8"
-version: 0.1.0
-license: MIT
