@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bazel Evidence Engineering"
+  short_description: "Choose the right Bazel evidence with discipline"
+  default_prompt: "Use $bazel-evidence-engineering to choose the smallest Bazel evidence surface and validation scope for this engineering task."

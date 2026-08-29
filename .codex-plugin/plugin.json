@@ -1,0 +1,33 @@
+{
+  "name": "agent-skills-for-bazel",
+  "version": "0.1.0",
+  "description": "Open Agent Skills for evidence-driven Bazel engineering decisions.",
+  "author": {
+    "name": "kingda8"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "bazel",
+    "build-engineering",
+    "evidence",
+    "provenance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Skills for Bazel",
+    "shortDescription": "Evidence-driven Bazel judgment",
+    "longDescription": "Agent Skills for selecting Bazel evidence, preserving authorization, and producing defensible engineering conclusions.",
+    "developerName": "kingda8",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Audit this Bazel control plane with defensible evidence.",
+      "Choose the smallest Bazel evidence for this task."
+    ],
+    "brandColor": "#162A46",
+    "screenshots": []
+  }
+}
