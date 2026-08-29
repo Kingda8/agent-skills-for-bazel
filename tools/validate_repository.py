@@ -28,6 +28,8 @@ REQUIRED_ROOT_FILES = {
     "SECURITY.md",
     "CONTRIBUTING.md",
     "AGENTS.md",
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
     ".codex-plugin/plugin.json",
 }
 SKIPPED_DIRECTORIES = {

@@ -1,0 +1,15 @@
+{
+  "name": "agent-skills-for-bazel",
+  "owner": {
+    "name": "kingda8"
+  },
+  "description": "An advanced Bazel Agent Skill for reliable builds, tests, and releases in medium-to-large repositories.",
+  "plugins": [
+    {
+      "name": "agent-skills-for-bazel",
+      "source": "./",
+      "description": "An advanced Bazel Agent Skill for reliable builds, tests, and releases in medium-to-large repositories.",
+      "version": "0.1.0"
+    }
+  ]
+}

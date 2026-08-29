@@ -29,8 +29,6 @@ def validate_plugin_manifest(root: Path) -> list[str]:
     name = data.get("name")
     if not isinstance(name, str) or not PLUGIN_NAME_PATTERN.fullmatch(name):
         errors.append(f"{label}: invalid or missing plugin name")
-    elif name != root.name:
-        errors.append(f"{label}: plugin name must match the repository folder")
     version = data.get("version")
     if not isinstance(version, str) or not SEMVER_PATTERN.fullmatch(version):
         errors.append(f"{label}: version must be strict semver")

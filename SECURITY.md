@@ -25,7 +25,7 @@ General Bazel or agent-client vulnerabilities belong with their upstream maintai
 
 ## Supported versions
 
-For v0.1.0, the current default branch is supported. After tagged releases begin, this section must name the supported release lines explicitly.
+Version `v0.1.0` and the current default branch are supported.
 
 ## Maintainer response
 

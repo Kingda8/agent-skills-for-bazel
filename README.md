@@ -38,6 +38,8 @@ The Bazel skill covers:
 | Evidence and performance | BEP versus BES, profiles, execution logs, critical paths, affected targets, concurrency, and stop conditions |
 | Delivery and trust | packages, OCI images, SBOM scope, provenance, signing, publication, and consumer verification |
 
+The core decision model is language-agnostic. Current language-layer guidance covers Rust and TypeScript.
+
 It deliberately does not prescribe one remote-build vendor, one universal flag set, every language's basic Bazel syntax, or features that a repository's pinned version and rulesets do not support.
 
 ## How it thinks
@@ -61,7 +63,9 @@ See [the dated Bazel baseline](docs/bazel-current-baseline.md) for the official 
 Explicitly invoke the skill, then give it a real decision:
 
 ```text
-$bazel-evidence-engineering
+Codex: $bazel-evidence-engineering
+Claude Code / Cursor (filesystem): /bazel-evidence-engineering
+Claude Code plugin: /agent-skills-for-bazel:bazel-evidence-engineering
 
 Audit whether this repository uses Bazel as a complete engineering control plane.
 Stay read-only. Classify every relevant capability, show the evidence surface for
@@ -73,19 +77,26 @@ The skill also supports implicit discovery for work whose relevant build, test, 
 
 ## Install
 
-Copy the complete `skills/bazel-evidence-engineering/` directory into one supported location. Keep `SKILL.md`, `agents/`, `references/`, and `LICENSE.txt` together.
+Claude Code users can install the plugin directly from GitHub:
+
+```text
+/plugin marketplace add Kingda8/agent-skills-for-bazel
+/plugin install agent-skills-for-bazel@agent-skills-for-bazel
+```
+
+For filesystem installation, copy the complete `skills/bazel-evidence-engineering/` directory into one supported location. Keep `SKILL.md`, `agents/`, `references/`, and `LICENSE.txt` together.
 
 | Client | User-level installation | Repository-level installation | Explicit invocation |
 |---|---|---|---|
 | Codex | `~/.agents/skills/bazel-evidence-engineering/` | `<repo>/.agents/skills/bazel-evidence-engineering/` | `$bazel-evidence-engineering` |
 | Claude Code | `~/.claude/skills/bazel-evidence-engineering/` | `<repo>/.claude/skills/bazel-evidence-engineering/` | `/bazel-evidence-engineering` |
-| Cursor | `~/.agents/skills/bazel-evidence-engineering/` or `~/.cursor/skills/bazel-evidence-engineering/` | `<repo>/.agents/skills/bazel-evidence-engineering/` or `<repo>/.cursor/skills/bazel-evidence-engineering/` | `/bazel-evidence-engineering` |
+| Cursor | `~/.agents/skills/bazel-evidence-engineering/`, `~/.cursor/skills/bazel-evidence-engineering/`, or `~/.claude/skills/bazel-evidence-engineering/` | `<repo>/.agents/skills/bazel-evidence-engineering/`, `<repo>/.cursor/skills/bazel-evidence-engineering/`, or `<repo>/.claude/skills/bazel-evidence-engineering/` | `/bazel-evidence-engineering` |
 
-For a repository used by all three clients, `.agents/skills/` serves Codex and Cursor; add the same complete skill under `.claude/skills/` for Claude Code. On Windows, `~` means the current user's profile directory.
+For a repository used by all three clients, `.agents/skills/` serves Codex and Cursor, while `.claude/skills/` serves Claude Code and is also recognized by Cursor. On Windows, `~` means the current user's profile directory.
 
-Current client references: [Codex skill locations](https://developers.openai.com/codex/skills), [Claude Code skill locations](https://code.claude.com/docs/en/skills), and [Cursor Agent Skills](https://cursor.com/docs/skills).
+Current client references: [Codex skill locations](https://learn.chatgpt.com/docs/build-skills), [Claude Code skill locations](https://code.claude.com/docs/en/skills), and [Cursor Agent Skills](https://cursor.com/docs/skills).
 
-The repository root also contains a [Codex plugin manifest](.codex-plugin/plugin.json), so the same source tree can be distributed as a skill-only plugin. The project is distributed directly from GitHub. No public plugin-directory listing has been published yet.
+The repository root also contains a [Codex plugin manifest](.codex-plugin/plugin.json), a [Claude Code plugin manifest](.claude-plugin/plugin.json), and a [Claude Code marketplace catalog](.claude-plugin/marketplace.json), so the same source tree can be distributed without restructuring. The project is distributed directly from GitHub. No public plugin-directory listing has been published yet.
 
 ## Trust and maturity
 

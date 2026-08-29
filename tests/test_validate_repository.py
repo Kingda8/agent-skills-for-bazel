@@ -183,13 +183,12 @@ class MetadataTests(unittest.TestCase):
     def test_current_plugin_manifest_passes_bounded_schema(self) -> None:
         self.assertEqual(validate_plugin_manifest(REPOSITORY_ROOT), [])
 
-    def test_plugin_name_must_match_repository_folder(self) -> None:
+    def test_plugin_name_is_independent_of_clone_folder(self) -> None:
         source = REPOSITORY_ROOT / ".codex-plugin" / "plugin.json"
         manifest = json.loads(source.read_text(encoding="utf-8"))
-        manifest["name"] = "different-plugin-name"
 
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory) / "expected-plugin-name"
+            root = Path(directory) / "my-bazel-skills"
             (root / ".codex-plugin").mkdir(parents=True)
             (root / "skills").mkdir()
             (root / ".codex-plugin" / "plugin.json").write_text(
@@ -199,7 +198,7 @@ class MetadataTests(unittest.TestCase):
 
             errors = validate_plugin_manifest(root)
 
-        self.assertTrue(any("must match" in error for error in errors))
+        self.assertEqual(errors, [])
 
 
 class GitHistoryTests(unittest.TestCase):
